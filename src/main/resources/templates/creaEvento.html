@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Crea Evento</title>
+</head>
+<body>
+
+<h1>Crea Evento</h1>
+
+<form action="/creaEvento" method="post">
+
+  Titolo:
+  <input type="text" name="titolo"><br><br>
+
+  Descrizione:
+  <input type="text" name="descrizione"><br><br>
+
+  Luogo:
+  <input type="text" name="luogo"><br><br>
+
+  Data:
+  <input type="date" name="data"><br><br>
+
+  Posti Disponibili:
+  <input type="number" name="postiDisponibili"><br><br>
+
+  <button type="submit">Salva</button>
+
+</form>
+
+</body>
+</html>

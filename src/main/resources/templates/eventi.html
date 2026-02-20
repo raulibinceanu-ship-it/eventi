@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eventi</title>
+</head>
+<body>
+
+<h1>Lista Eventi</h1>
+
+<table border="1">
+    <tr>
+        <th>Titolo</th>
+        <th>Luogo</th>
+        <th>Data</th>
+        <th>Posti</th>
+        <th>Prenota</th>
+        <th>Elimina</th>
+    </tr>
+
+    <tr th:each="e : ${eventi}">
+        <td th:text="${e.titolo}"></td>
+        <td th:text="${e.luogo}"></td>
+        <td th:text="${e.data}"></td>
+        <td th:text="${e.postiDisponibili}"></td>
+        <td>
+            <form th:action="@{'/prenota/' + ${e.id}}" method="post">
+                <button type="submit">Prenota</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{'/elimina/' + ${e.id}}" method="post">
+                <button type="submit">Elimina</button>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
