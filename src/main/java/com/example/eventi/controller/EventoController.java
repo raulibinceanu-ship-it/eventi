@@ -33,4 +33,24 @@ public class EventoController {
 
         return "redirect:/eventi";
     }
+    @GetMapping("/creaEvento")
+    public String mostraForm(Evento evento){
+        return "creaEvento";
+    }
+
+    @PostMapping("/creaEvento")
+    public String salvaEvento(@ModelAttribute Evento evento){
+
+        eventoService.salva(evento);
+
+        return "redirect:/eventi";
+    }
+
+    @PostMapping("/elimina/{id}")
+    public String eliminaEvento(@PathVariable Long id){
+
+        eventoService.elimina(id);
+
+        return "redirect:/eventi";
+    }
 }
